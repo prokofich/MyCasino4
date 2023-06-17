@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f647"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.JackpotFragment">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_gravity="right" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:id="@+id/id_jackpot_tv_cash"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="1000"
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/id_jackpot_img_cash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/id_jackpot_img"
+        android:layout_width="390dp"
+        android:layout_height="121dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="390dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_height="220dp">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:orientation="vertical"
+            android:background="#fc8800"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="110dp"
+                android:gravity="center"
+                android:text="-"
+                android:textStyle="italic"
+                android:textColor="#ff0000"
+                android:textSize="130sp"
+                android:id="@+id/id_jackpot_window_1"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_height="150dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:background="#db00ff"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="110dp"
+                android:gravity="center"
+                android:text="-"
+                android:textStyle="italic"
+                android:textColor="#ff0000"
+                android:textSize="130sp"
+                android:id="@+id/id_jackpot_window_2"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_height="150dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:background="#16f64b"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="110dp"
+                android:text="- "
+                android:textStyle="italic"
+                android:textColor="#ff0000"
+                android:textSize="130sp"
+                android:gravity="center"
+                android:id="@+id/id_jackpot_window_3"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_height="150dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="390dp"
+        android:id="@+id/id_jackpot_button_go"
+        android:text="GO! GO! GO!"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:background="#f95555"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:id="@+id/id_jackpot_tv_price"
+        android:text="each attempt costs $20"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:id="@+id/id_jackpot_you_won"
+        android:gravity="center"
+        android:text="you won: 0$"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:layout_height="50dp"
+        android:layout_gravity="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="150dp"
+        android:text="-menu-"
+        android:textSize="30sp"
+        android:id="@+id/id_jackpot_button_menu"
+        android:textColor="@color/white"
+        android:background="#f95555"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp" />
+
+</LinearLayout>

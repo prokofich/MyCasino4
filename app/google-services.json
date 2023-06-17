@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189754039170",
+    "project_id": "mycasino4-e33db",
+    "storage_bucket": "mycasino4-e33db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189754039170:android:1fa88e8b8c05dbe28c4d9b",
+        "android_client_info": {
+          "package_name": "com.example.mycasino4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189754039170-iisikr1qlhcg4pdll4iuesa81h0bs99g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMcH8R-vIXmVrQnKfBiK8-lDhoTNcEnyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189754039170-iisikr1qlhcg4pdll4iuesa81h0bs99g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

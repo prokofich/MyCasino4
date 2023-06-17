@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#5c53d8"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.BlackjackFragment">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_gravity="right" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:id="@+id/id_blackjack_tv_cash"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="1000"
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/id_blackjack_img_cash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="246dp"
+        android:id="@+id/id_blackjack_img"
+        android:layout_height="86dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/id_blackjack_tv_your_cards"
+        android:text="your cards"
+        android:textStyle="italic"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_me_blackjack1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_me_blackjack2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_me_blackjack3"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_me_blackjack4"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="150dp"
+        android:id="@+id/id_blackjack_tv_enemy_cards"
+        android:gravity="center"
+        android:text="enemy cards"
+        android:visibility="gone"
+        android:textStyle="italic"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_blackjack_op1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_blackjack_op2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_gravity="center"
+            android:id="@+id/id_blackjack_op3"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/id_blackjack_op4"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_height="120dp"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="150dp"
+        android:text="GO"
+        android:visibility="visible"
+        android:id="@+id/id_blackjack_go"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:background="#1100ff"
+        android:layout_gravity="center"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:id="@+id/id_blackjack_ll_buttons"
+        android:layout_width="350dp"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_height="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="170dp"
+            android:id="@+id/id_blackjack_btn_to_finish"
+            android:text="to finish"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="#1100ff"
+            android:layout_height="match_parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="170dp"
+            android:id="@+id/id_blackjack_btn_take_card"
+            android:text="take 1 card"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:background="#1100ff"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="347dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/id_blackjack_tv_price"
+        android:text="each attempt costs $50"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+    <TextView
+        android:layout_width="300dp"
+        android:visibility="gone"
+        android:id="@+id/id_blackjack_you_won"
+        android:gravity="center"
+        android:text="you won: 0$"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:layout_height="50dp"
+        android:layout_gravity="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="150dp"
+        android:text="-menu-"
+        android:textSize="30sp"
+        android:id="@+id/id_blackjack_button_menu"
+        android:textColor="@color/white"
+        android:background="#f95555"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
+
+
+
+
+
+
+</LinearLayout>

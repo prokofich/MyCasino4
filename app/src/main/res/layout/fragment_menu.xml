@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.MenuFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp">
+
+
+        <TextView
+            android:layout_width="159dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="125dp"
+            android:gravity="center"
+            android:text="CASINO"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/id_menu_tv_cash"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="500"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/id_menu_img_cash"
+            android:layout_width="54dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#1c00ff"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="220dp">
+
+        <TextView
+            android:id="@+id/id_menu_tv_blackjack"
+            android:layout_width="300dp"
+            android:textColor="@color/white"
+            android:background="#5cacc3"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="BlackJack"
+            android:textSize="50sp" />
+
+
+        <ImageView
+            android:layout_width="194dp"
+            android:id="@+id/id_menu_img_blackjack"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#ff0000"
+        android:orientation="vertical"
+        android:layout_height="220dp">
+
+        <TextView
+            android:id="@+id/id_menu_tv_roulette"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#d74f4f"
+            android:gravity="center"
+            android:text="Roulette"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:id="@+id/id_menu_img_roulette"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#fffc00"
+        android:layout_height="210dp">
+
+        <TextView
+            android:id="@+id/id_menu_tv_jackpot"
+            android:layout_width="300dp"
+            android:text="Jackpot"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="#dce926"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/id_menu_img_jackpot"
+            android:layout_width="173dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:id="@+id/id_menu_exit"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#2d292c"
+        android:text="EXIT"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+
+</LinearLayout>

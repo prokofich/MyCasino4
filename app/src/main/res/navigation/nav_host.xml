@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.mycasino4.view.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_loadingGameFragment"
+            app:destination="@id/loadingGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingGameFragment"
+        android:name="com.example.mycasino4.view.fragments.LoadingGameFragment"
+        android:label="fragment_loading_game"
+        tools:layout="@layout/fragment_loading_game" >
+        <action
+            android:id="@+id/action_loadingGameFragment_to_blackjackFragment"
+            app:destination="@id/blackjackFragment" />
+        <action
+            android:id="@+id/action_loadingGameFragment_to_rouletteFragment"
+            app:destination="@id/rouletteFragment" />
+        <action
+            android:id="@+id/action_loadingGameFragment_to_jackpotFragment"
+            app:destination="@id/jackpotFragment" />
+        <action
+            android:id="@+id/action_loadingGameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jackpotFragment"
+        android:name="com.example.mycasino4.view.fragments.JackpotFragment"
+        android:label="fragment_jackpot"
+        tools:layout="@layout/fragment_jackpot" >
+        <action
+            android:id="@+id/action_jackpotFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rouletteFragment"
+        android:name="com.example.mycasino4.view.fragments.RouletteFragment"
+        android:label="fragment_roulette"
+        tools:layout="@layout/fragment_roulette" >
+        <action
+            android:id="@+id/action_rouletteFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blackjackFragment"
+        android:name="com.example.mycasino4.view.fragments.BlackjackFragment"
+        android:label="fragment_blackjack"
+        tools:layout="@layout/fragment_blackjack" >
+        <action
+            android:id="@+id/action_blackjackFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>
