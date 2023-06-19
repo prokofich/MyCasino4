@@ -7,10 +7,7 @@ import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.mycasino4.R
-import com.example.mycasino4.constant.APP_PREFERENCES
-import com.example.mycasino4.constant.LAST_DAY
-import com.example.mycasino4.constant.MAIN
-import com.example.mycasino4.constant.MY_CASH
+import com.example.mycasino4.constant.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,6 +57,15 @@ class MainActivity : AppCompatActivity() {
         pref.edit()
             .putInt(MY_CASH,preferences)
             .apply()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if(contextGame == "MENU"){
+            finishAffinity()
+        }
+
     }
 
 

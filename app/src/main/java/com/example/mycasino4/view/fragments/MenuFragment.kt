@@ -4,9 +4,11 @@ import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.example.mycasino4.R
@@ -21,6 +23,11 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                MAIN.finishAffinity()
+            }
+        })
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
@@ -36,6 +43,8 @@ class MenuFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        contextGame = "MENU"
 
         //загрузка картинок////////
         loadImageJackpot()
@@ -68,6 +77,8 @@ class MenuFragment : Fragment() {
 
     }
 
+
+
     private fun loadImageJackpot(){
         Glide.with(requireContext())
             .load(url_image_menu_jackpot)
@@ -96,6 +107,7 @@ class MenuFragment : Fragment() {
             MAIN.addCash(300)
         }
     }
+
 
 
 

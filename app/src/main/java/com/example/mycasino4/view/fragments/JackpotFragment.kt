@@ -8,21 +8,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.mycasino4.R
-import com.example.mycasino4.constant.MAIN
-import com.example.mycasino4.constant.listNumberForJackpot
-import com.example.mycasino4.constant.url_image_cash
-import com.example.mycasino4.constant.url_image_jackpot
+import com.example.mycasino4.constant.*
 import kotlinx.android.synthetic.main.fragment_jackpot.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class JackpotFragment : Fragment() {
 
     var number_1_for_jackpot = 0
     var number_2_for_jackpot = 0
     var number_3_for_jackpot = 0
+
+    var corJob:Job = Job()
 
     var myCashWin = 0
 
@@ -36,12 +32,17 @@ class JackpotFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        contextGame = JACKPOT
+
         loadImageJackpot()
         loadImageCash()
 
         id_jackpot_tv_cash.text = MAIN.getMyCash().toString()
 
         id_jackpot_button_menu.setOnClickListener {
+            if(corJob.isActive){
+                corJob.cancel()
+            }
             MAIN.navController.navigate(R.id.action_jackpotFragment_to_menuFragment)
         }
 
@@ -76,7 +77,7 @@ class JackpotFragment : Fragment() {
     }
 
     private fun showNumberForJackpot(){
-        CoroutineScope(Dispatchers.Main).launch {
+        corJob = CoroutineScope(Dispatchers.Main).launch {
             delay(1000)
             id_jackpot_window_1.text = number_1_for_jackpot.toString()
             delay(1000)

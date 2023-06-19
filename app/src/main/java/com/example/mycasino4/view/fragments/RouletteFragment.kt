@@ -11,12 +11,16 @@ import com.bumptech.glide.Glide
 import com.example.mycasino4.R
 import com.example.mycasino4.constant.*
 import kotlinx.android.synthetic.main.fragment_roulette.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class RouletteFragment : Fragment() {
+
+    var corJob1:Job = Job()
+    var corJob2:Job = Job()
+    var corJob3:Job = Job()
+    var corJob4:Job = Job()
+    var corJob5:Job = Job()
+    var corJob6:Job = Job()
 
     var roulettePoints = 0
     var cashWin = 0
@@ -30,6 +34,8 @@ class RouletteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        contextGame = ROULETTE
 
         val p1 = id_roulette_1
         val p2 = id_roulette_2
@@ -76,7 +82,7 @@ class RouletteFragment : Fragment() {
 
                 showPoint()
 
-                CoroutineScope(Dispatchers.Main).launch {
+                corJob1 = CoroutineScope(Dispatchers.Main).launch {
                     if(i.text.toString().toInt()==roulettePoints){
                         MAIN.addCash(1000)
                         id_roulette_tv_cash.text = MAIN.getMyCash().toString()
@@ -110,22 +116,42 @@ class RouletteFragment : Fragment() {
             }
         }
 
-        Toast.makeText(requireContext(),"click on any of the 5 buttons",Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(),"click on any of the 5 buttons",Toast.LENGTH_SHORT).show()
 
         loadImageCash()
         id_roulette_tv_cash.text = MAIN.getMyCash().toString()
 
         id_roulette_button_menu.setOnClickListener {
+            if(corJob1.isActive){
+                corJob1.cancel()
+            }
+            if(corJob2.isActive){
+                corJob2.cancel()
+            }
+            if(corJob3.isActive){
+                corJob3.cancel()
+            }
+            if(corJob4.isActive){
+                corJob4.cancel()
+            }
+            if(corJob5.isActive){
+                corJob5.cancel()
+            }
+            if(corJob6.isActive){
+                corJob6.cancel()
+            }
             MAIN.navController.navigate(R.id.action_rouletteFragment_to_menuFragment)
         }
 
         id_roulette_btn_even.setOnClickListener {
             if(checkMyCash()){
-               loadRandomPoints()
-                if(roulettePoints%2==0){
-                    win()
-                }else{
-                    Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                corJob5 = CoroutineScope(Dispatchers.Main).launch {
+                    loadRandomPoints()
+                    if(roulettePoints%2==0){
+                        win()
+                    }else{
+                        Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                    }
                 }
             }else{
                 Toast.makeText(requireContext(),"you don't have enough money",Toast.LENGTH_SHORT).show()
@@ -134,11 +160,13 @@ class RouletteFragment : Fragment() {
 
         id_roulette_btn_odd.setOnClickListener {
             if(checkMyCash()){
-                loadRandomPoints()
-                if(roulettePoints%2==1){
-                    win()
-                }else{
-                    Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                corJob4 = CoroutineScope(Dispatchers.Main).launch {
+                    loadRandomPoints()
+                    if(roulettePoints%2==1){
+                        win()
+                    }else{
+                        Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                    }
                 }
             }else{
                 Toast.makeText(requireContext(),"you don't have enough money",Toast.LENGTH_SHORT).show()
@@ -147,11 +175,13 @@ class RouletteFragment : Fragment() {
 
         id_roulette_btn_red.setOnClickListener {
             if(checkMyCash()){
-                loadRandomPoints()
-                if(roulettePoints in listRouletteRed){
-                    win()
-                }else{
-                    Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                corJob2 = CoroutineScope(Dispatchers.Main).launch {
+                    loadRandomPoints()
+                    if(roulettePoints in listRouletteRed){
+                        win()
+                    }else{
+                        Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                    }
                 }
             }else{
                 Toast.makeText(requireContext(),"you don't have enough money",Toast.LENGTH_SHORT).show()
@@ -160,11 +190,13 @@ class RouletteFragment : Fragment() {
 
         id_roulette_btn_black.setOnClickListener {
             if(checkMyCash()){
-                loadRandomPoints()
-                if(roulettePoints in listRouletteBlack){
-                    win()
-                }else{
-                    Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                corJob3 = CoroutineScope(Dispatchers.Main).launch {
+                    loadRandomPoints()
+                    if(roulettePoints in listRouletteBlack){
+                        win()
+                    }else{
+                        Toast.makeText(requireContext(),"you didn't guess",Toast.LENGTH_SHORT).show()
+                    }
                 }
             }else{
                 Toast.makeText(requireContext(),"you don't have enough money",Toast.LENGTH_SHORT).show()
@@ -198,7 +230,7 @@ class RouletteFragment : Fragment() {
     }
 
     private fun showPoint(){
-        CoroutineScope(Dispatchers.Main).launch {
+        corJob6 = CoroutineScope(Dispatchers.Main).launch {
             id_roulette_points_win.text = roulettePoints.toString()
             if(roulettePoints in listRouletteRed){
                 id_roulette_points_win.setBackgroundResource(R.color.color_roulette)

@@ -3,6 +3,7 @@ package com.example.mycasino4.constant
 import com.example.mycasino4.view.activity.MainActivity
 
 lateinit var MAIN:MainActivity
+var contextGame = ""
 
 const val GAME = "GAME"
 const val BLACKJACK = "BLACKJACK"
@@ -14,6 +15,8 @@ const val LAST_DAY = "LAST_DAY"
 const val MY_CASH = "MY_CASH"
 
 const val ID = "ID"
+
+
 
 //menu//////////////////////////////////////////////////////////////////////////////////////////////
 const val url_image_menu_blackjack = "http://37.27.9.28/11/blackjack_menu-YZNZ3Tpju-transformed.png"

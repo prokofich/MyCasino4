@@ -30,6 +30,8 @@ class LoadingGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        contextGame = "LOADING"
+
         var game = requireArguments().getString(GAME)
 
         when(game){
