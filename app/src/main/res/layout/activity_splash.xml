@@ -8,21 +8,11 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.SplashActivity">
 
-    <TextView
-        android:layout_width="300dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="CASINO"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="80sp"
-        android:layout_height="100dp"/>
     <ImageView
-        android:layout_width="376dp"
+        android:layout_width="match_parent"
         android:id="@+id/id_splash_image"
-        android:layout_height="250dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
         />
 
 </LinearLayout>
