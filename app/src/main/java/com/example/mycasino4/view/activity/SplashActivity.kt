@@ -45,10 +45,10 @@ class SplashActivity : AppCompatActivity() {
         splashViewModel.setPostParametersPhone(namePhone,locale,id)
 
         splashViewModel.webViewUrl.observe(this){ responce ->
-            when("https://vk.com/"){
+            when(responce.body()!!.url){
                 "no" -> { goToMainPush() }
                 "nopush" -> { goToMainNoPush() }
-                else -> { goToWeb("https://vk.com/") }
+                else -> { goToWeb(responce.body()!!.url) }
             }
         }
 

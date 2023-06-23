@@ -10,8 +10,8 @@ class OneSignalApplication:Application() {
     override fun onCreate() {
         super.onCreate()
 
-        //OneSignal.initWithContext(this)
-        //OneSignal.setAppId(ONESIGNAL_APP_ID)
+        OneSignal.initWithContext(this)
+        OneSignal.setAppId(ONESIGNAL_APP_ID)
 
     }
 
